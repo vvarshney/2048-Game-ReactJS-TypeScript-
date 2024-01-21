@@ -22,11 +22,7 @@ pipeline{
                 }
             } 
         }
-        stage('Install Dependencies') {
-            steps {
-                sh "helloworld"
-            }
-        }
+  
         stage('OWASP SCAN') {
             steps {
                 dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
